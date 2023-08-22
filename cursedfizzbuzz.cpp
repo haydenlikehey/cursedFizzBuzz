@@ -65,10 +65,4 @@ int main (void) {
 
   }
 
-  delete[] numbers;
-  numbers = nullptr;
-
-  delete[] fizzbuzz;
-  fizzbuzz = nullptr;
-
 }
