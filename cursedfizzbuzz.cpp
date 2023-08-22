@@ -1,3 +1,4 @@
+#include <cstddef>
 #include <iostream>
 #include <vector>
 
@@ -11,20 +12,20 @@ int main (void) {
 
   while (integer < 100) {
 
-    if (numbers[integer] % 3 != 0 && numbers[integer] % 5 != 0 && numbers[integer] % 15 != 0) {
+    if ((*(numbers) + integer) % 3 != 0 && (*(numbers) + integer) % 5 != 0 && (*(numbers) + integer) % 15 != 0) {
 
-      std::cout << numbers[integer] << std::endl;
+      std::cout << (*(numbers) + integer) << std::endl;
   
     } else {
 
       try {
-        if (numbers[integer] % 15 == 0) {
+        if ((*(numbers) + integer) % 15 == 0) {
           throw 15;
         }
       }
       catch (int fizzybuzzy) {
         for (int k = 0; k < 8; k = k + 1) {
-          std::cout << fizzbuzz[k];
+          std::cout << *((fizzbuzz) + k);
         }
         std::cout << std::endl;
         integer = integer + 1;
@@ -32,13 +33,13 @@ int main (void) {
       }
 
       try {
-        if (numbers[integer] % 5 == 0) {
+        if ((*(numbers) + integer) % 5 == 0) {
           throw 5;
         }
       }
       catch (int buzz) {
         for (int j = 4; j < 8; j++) {
-          std::cout << fizzbuzz[j];
+          std::cout << *((fizzbuzz) + j);
         }
         std::cout << std::endl;
         integer = integer + 1;
@@ -46,13 +47,13 @@ int main (void) {
       }
 
       try {
-        if (numbers[integer] % 3 == 0) {
+        if ((*(numbers) + integer) % 3 == 0) {
           throw 3;
         }
       }
       catch (int buzz) {
         for (int i = 0; i < 4; ++i){
-          std::cout << fizzbuzz[i];
+          std::cout << *((fizzbuzz) + i);
         }
           std::cout << std::endl;
           integer = integer + 1;
@@ -64,5 +65,11 @@ int main (void) {
     integer = integer + 1;
 
   }
+
+  delete[] numbers;
+  numbers = nullptr;
+
+  delete[] fizzbuzz;
+  fizzbuzz = nullptr;
 
 }
