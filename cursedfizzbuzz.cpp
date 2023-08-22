@@ -1,4 +1,3 @@
-#include <cstddef>
 #include <iostream>
 #include <vector>
 
@@ -19,7 +18,7 @@ int main (void) {
     } else {
 
       try {
-        if ((*(numbers) + integer) % 15 == 0) {
+        if (*((numbers) + integer) % 15 == 0) {
           throw 15;
         }
       }
@@ -33,7 +32,7 @@ int main (void) {
       }
 
       try {
-        if ((*(numbers) + integer) % 5 == 0) {
+        if (*((numbers) + integer) % 5 == 0) {
           throw 5;
         }
       }
@@ -47,7 +46,7 @@ int main (void) {
       }
 
       try {
-        if ((*(numbers) + integer) % 3 == 0) {
+        if (*((numbers) + integer) % 3 == 0) {
           throw 3;
         }
       }
