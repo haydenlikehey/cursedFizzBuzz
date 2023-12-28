@@ -66,10 +66,4 @@ int main (void) {
     goto loop;
   }
 
-  delete[] numbers;
-  numbers = nullptr;
-
-  delete[] fizzbuzz;
-  fizzbuzz = nullptr;
-
 }
