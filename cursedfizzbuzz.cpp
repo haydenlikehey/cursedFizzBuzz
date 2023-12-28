@@ -11,7 +11,10 @@ int main (void) {
   loop:
 
     if ((*(numbers) + integer) % 3 != 0 && (*(numbers) + integer) % 5 != 0 && (*(numbers) + integer) % 15 != 0) {
-
+      
+      if (integer >= 100) {
+        goto exit;
+      }
       std::cout << (*(numbers) + integer) << std::endl;
   
     } else {
@@ -65,5 +68,8 @@ int main (void) {
   if (integer < 100) {
     goto loop;
   }
+
+  exit:
+  return 1;
 
 }
