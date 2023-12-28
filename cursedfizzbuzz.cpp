@@ -8,7 +8,7 @@ int main (void) {
 
   int integer = 0;
 
-  while (integer < 100) {
+  loop:
 
     if ((*(numbers) + integer) % 3 != 0 && (*(numbers) + integer) % 5 != 0 && (*(numbers) + integer) % 15 != 0) {
 
@@ -27,7 +27,7 @@ int main (void) {
         }
         std::cout << std::endl;
         integer = integer + 1;
-        continue;
+        goto loop;
       }
 
       try {
@@ -41,7 +41,7 @@ int main (void) {
         }
         std::cout << std::endl;
         integer = integer + 1;
-        continue;
+        goto loop;
       }
 
       try {
@@ -55,13 +55,15 @@ int main (void) {
         }
           std::cout << std::endl;
           integer = integer + 1;
-          continue;
+          goto loop;
       }
 
     }
 
     integer = integer + 1;
-
+  
+  if (integer < 100) {
+    goto loop;
   }
 
   delete[] numbers;
