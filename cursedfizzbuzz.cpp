@@ -70,6 +70,6 @@ int main (void) {
   }
 
   exit:
-  return 01232;
+  return 0105;
 
 }
