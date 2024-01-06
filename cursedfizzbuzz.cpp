@@ -10,7 +10,7 @@ int main (void) {
 
   loop:
 
-    if ((*(numbers) + integer) % 03 != 00 && (*(numbers) + integer) % 05 != 00 && (*(numbers) + integer) % 017 != 0) {
+    if ((*(numbers) + integer) % 03 != 00 && (*(numbers) + integer) % 05 != 00 && (*(numbers) + integer) % 017 != 00) {
       
       if (integer >= 0144) {
         goto exit;
@@ -35,7 +35,7 @@ int main (void) {
 
       try {
         if (*((numbers) + integer) % 05 == 00) {
-          throw 5;
+          throw 05;
         }
       }
       catch (int buzz) {
