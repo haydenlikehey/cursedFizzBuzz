@@ -70,6 +70,6 @@ int main (void) <%
   %>
 
   exit:
-  return 0105;
+  return 0103;
 
 %>
